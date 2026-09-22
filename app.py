@@ -18,6 +18,16 @@ def route_sample(text):
     return text
 
 
+@app.route("/age/<num>")
+def age_any(num):
+    return f"<h1>{num} 살 - 타입은 {type(num).__name__}</h1>"
+
+
+@app.route("/age2/<int:num>")
+def age_int(num):
+    return f"<h1>{num} 살 - 타입은 {type(num).__name__}</h1>"
+
+
 #   이 방법을 쓰려면 flask run 이 아닌, python app.py 방식으로 실행해야함.
 # if __name__ == "__main__":
 #     app.run(debug=True)
