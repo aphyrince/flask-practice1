@@ -16,6 +16,11 @@ def profile():
     return render_template("profile.html", hobbyList=my_hobby)
 
 
+@app.route("/greet/")
+def greet_fail():
+    return render_template("greet_fail.html")
+
+
 @app.route("/greet/<name>")
 def greet(name):
     return render_template("greet.html", name=name)
