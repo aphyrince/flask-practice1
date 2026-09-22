@@ -4,35 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CE_WebSystem_HW1_안정호_21011318</title>
-    <style></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+      }
+      .link_section {
+        /* width: 100%; */
+        display: flex;
+        flex-direction: column;
+      }
+      .greet_section {
+        width: 100%;
+      }
+      .input_section {
+        display: flex;
+        height: 40px;
+        width: 300px;
+        background-color: rgba(222, 184, 135, 0.224);
+        border: 2px solid burlywood;
+        border-radius: 8px;
+        padding: 8px;
+      }
+
+      input {
+        font-size: large;
+        flex-grow: 1;
+        margin: 0;
+        background-color: transparent;
+        border: none;
+        padding-left: 8px;
+      }
+      button {
+        margin: 0;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
     <div class="content">
       <h1>CE_WebSystem_HW1</h1>
       <h2>안정호_21011318</h2>
     </div>
-    <div class="link">
+    <div class="link_section">
       <a href="/profile">저의 취미는...</a>
-      <div>
+      <div class="greet_section">
         <p>당신은 누구시죠?</p>
-        <input type="text" id="name_input" />
-        <button id="name_btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-arrow-right preview-icon"
-          >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
-        </button>
+        <div class="input_section">
+          <input type="text" id="name_input" placeholder="나는..." />
+          <button id="name_btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-right preview-icon"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
     <script>
