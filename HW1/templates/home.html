@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>CE_WebSystem_HW1</h1>
+      <h2>안정호_21011318</h2>
+    </div>
+    <div class="link">
+      <a href="/profile">저의 취미는...</a>
+      <div>
+        <p>당신은 누구시죠?</p>
+        <input type="text" id="name_input" />
+        <button id="name_btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-right preview-icon"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script>
+      const nameInput = document.getElementById('name_input');
+      const nameBtn = document.getElementById('name_btn');
+
+      const linkToGreet = () => {
+        window.location.href = `/greet/${nameInput.value}`;
+      };
+
+      nameInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          linkToGreet();
+        }
+      });
+
+      nameBtn.addEventListener('click', linkToGreet);
+    </script>
+  </body>
+</html>
