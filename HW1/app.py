@@ -11,3 +11,8 @@ def home():
 @app.route("/profile")
 def profile():
     return render_template("profile.html")
+
+
+@app.route("/greet/<name>")
+def greet(name):
+    return render_template("greet.html", name=name)
