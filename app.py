@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -26,6 +26,11 @@ def age_any(num):
 @app.route("/age2/<int:num>")
 def age_int(num):
     return f"<h1>{num} 살 - 타입은 {type(num).__name__}</h1>"
+
+
+@app.route("/hi/<name>")
+def hi_template_render(name):
+    return render_template("hi.html", name=name)
 
 
 #   이 방법을 쓰려면 flask run 이 아닌, python app.py 방식으로 실행해야함.
