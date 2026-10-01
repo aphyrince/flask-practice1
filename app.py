@@ -1,38 +1,36 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
-    return "<h1>메인 페이지</h1>"
+def index():
+    return f"<a href='{url_for('about')}'>소개로</a>"
 
 
 @app.route("/about")
 def about():
-    return "<h1>소개 페이지</h1>"
+    return "소개 페이지"
 
 
-@app.route("/test/<text>")
-def route_sample(text):
-    return text
+@app.route("/user/<username>")
+def profile(username):
+    return f"{username} 님의 프로필"
 
 
-@app.route("/age/<num>")
-def age_any(num):
-    return f"<h1>{num} 살 - 타입은 {type(num).__name__}</h1>"
+@app.route("/post/<int:pid>")
+def post(pid):
+    return f"{pid}번 글 (자료형: {type(pid).__name__})"
 
 
-@app.route("/age2/<int:num>")
-def age_int(num):
-    return f"<h1>{num} 살 - 타입은 {type(num).__name__}</h1>"
+@app.route("/notes/")
+def notes():
+    return "메모 목록"
 
 
-@app.route("/hi/<name>")
-def hi_template_render(name):
-    return render_template("hi.html", name=name)
-
-
-#   이 방법을 쓰려면 flask run 이 아닌, python app.py 방식으로 실행해야함.
-# if __name__ == "__main__":
-#     app.run(debug=True)
+@app.route("/hello")
+@app.route("/hello/<name>")
+def hello(name=None):
+    if name:
+        return f"안녕하세요, {name} 님"
+    return "안녕하세요"
