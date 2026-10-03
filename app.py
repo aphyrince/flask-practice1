@@ -14,8 +14,15 @@ def about():
 
 
 @app.route("/user/<username>")
-def profile(username):
-    return f"{username} 님의 프로필"
+def user_profile(username):
+    return render_template(
+        "profile.html", username=username, posts=["첫 글", "두 번째 글"]
+    )
+
+
+@app.route("/newuser/<username>")
+def new_user(username):
+    return render_template("profile.html", username=username, posts=[])
 
 
 @app.route("/post/<int:pid>")
@@ -32,7 +39,7 @@ def notes():
 @app.route("/hello/<name>")
 def hello(name=None):
     if name:
-        return f"안녕하세요, {name} 님"
+        return render_template("hello.html", name=name)
     return "안녕하세요"
 
 
