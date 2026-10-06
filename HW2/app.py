@@ -26,3 +26,9 @@ def delete(index):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+@app.route("/toggle/<int:index>")
+def toggleDone(index):
+    todos[index].done = not todos[index].done
+    return redirect(url_for("index"))
