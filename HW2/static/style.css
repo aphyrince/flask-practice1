@@ -39,3 +39,7 @@ a {
         text-decoration: underline;
     }
 }
+
+.done_True {
+    text-decoration: line-through;
+}
