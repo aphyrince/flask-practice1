@@ -9,7 +9,7 @@ todos = []
 def index():
     if request.method == "POST":
         todo = {
-            "text": request.form["todo"]["text"],
+            "text": request.form["todo"],
             "done": False,
         }
         todos.append(todo)
@@ -30,5 +30,6 @@ if __name__ == "__main__":
 
 @app.route("/toggle/<int:index>")
 def toggleDone(index):
-    todos[index].done = not todos[index].done
+    if 0 <= index < len(todos):
+        todos[index]["done"] = not todos[index]["done"]
     return redirect(url_for("index"))
