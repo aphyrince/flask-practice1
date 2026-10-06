@@ -5,27 +5,32 @@
 
 <!--  -->
 {% block content %}
-<h2>Add new Todos</h2>
-<form method="post">
-  <input type="text" name="todo" required />
-  <button type="submit">Add Todos</button>
-</form>
+<div class="section_add">
+  <h2>Add new Todos</h2>
+  <form method="post">
+    <input type="text" name="todo" required id="new_todo" placeholder="." />
+    <label for="new_todo">New Todo</label>
+    <button type="submit">Add Todos</button>
+  </form>
+</div>
 
-<h2>Todo List</h2>
-{% if todos %}
-<ul>
-  {% for todo in todos %}
-  <li>
-    <a href="{{url_for('toggleDone', index=loop.index0)}}">완료</a>
-    <span class="done_{{todo.done}}">{{todo.text}}</span>
-    <a href="{{url_for('delete', index=loop.index0)}}">Delete</a>
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>No todos yet. Add some!</p>
+<div class="section_list">
+  <h2>Todo List</h2>
+  {% if todos %}
+  <ul class="todo_list">
+    {% for todo in todos %}
+    <li class="card">
+      <a href="{{url_for('toggleDone', index=loop.index0)}}">완료</a>
+      <span class="done_{{todo.done}}">{{todo.text}}</span>
+      <a href="{{url_for('delete', index=loop.index0)}}">Delete</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No todos yet. Add some!</p>
 
-{% endif %}
+  {% endif %}
+</div>
 
 <!--  -->
 {% endblock %}
