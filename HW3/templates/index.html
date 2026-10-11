@@ -28,6 +28,7 @@
     <li class="card">
       <a href="{{url_for('toggleDone', id=todo.id)}}">완료</a>
       <span class="done_{{todo.done}}">{{todo.text}}</span>
+      <span class="note">{{todo.note | default('')}}</span>
       <a href="{{url_for('delete', id=todo.id)}}">Delete</a>
     </li>
     {% endfor %}

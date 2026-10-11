@@ -126,4 +126,8 @@ a {
 }
 
 .card {
+    .note {
+        color: #787777;
+        font-size: 0.75rem;
+    }
 }
