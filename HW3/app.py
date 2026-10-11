@@ -17,6 +17,7 @@ db = SQLAlchemy(app)
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(100), nullable=False)
+    note = db.Column(db.String(200))
     done = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
@@ -54,6 +55,15 @@ def toggleDone(id):
     db.session.commit()
 
     return redirect(url_for("index"))
+
+
+# @app.route("/edit/<int:id>")
+# def edit(id):
+
+#     todo = db.get_or_404(Todo,id)
+#     todo.
+
+#     return redirect(url_for("index"))
 
 
 with app.app_context():
