@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+<!--  -->
+{% block title %}Todo List - Todo App{% endblock %}
+
+<!--  -->
+{% block content %}
+<div class="section_edit">
+  <h2>할 일 수정</h2>
+  <form method="post">
+    <div class="input_wrap">
+      <input type="text" name="todo" required id="todo_text" placeholder="." value="{{todo.text}}" />
+      <label for="todo_text">Text</label>
+    </div>
+    <div class="input_wrap">
+      <input type="text" name="note" placeholder="설명" id="note" value="{{todo.note}}" />
+      <label for="note">Note</label>
+    </div>
+    <button type="submit">저장</button>
+  </form>
+</div>
+
+<!--  -->
+{% endblock %}

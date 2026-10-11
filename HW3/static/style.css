@@ -44,7 +44,8 @@ a {
     text-decoration: line-through;
 }
 
-.section_add {
+.section_add,
+.section_edit {
     form {
         position: relative;
         display: flex;
