@@ -8,8 +8,14 @@
 <div class="section_add">
   <h2>Add new Todos</h2>
   <form method="post">
-    <input type="text" name="todo" required id="new_todo" placeholder="." />
-    <label for="new_todo">New Todo</label>
+    <div class="input_wrap">
+      <input type="text" name="todo" required id="new_todo" placeholder="." />
+      <label for="new_todo">New Todo</label>
+    </div>
+    <div class="input_wrap">
+      <input type="text" name="note" placeholder="설명" id="note" />
+      <label for="note">설명</label>
+    </div>
     <button type="submit">Add Todos</button>
   </form>
 </div>

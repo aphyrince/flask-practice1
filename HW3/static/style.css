@@ -47,6 +47,13 @@ a {
 .section_add {
     form {
         position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 16px;
+    }
+    .input_wrap {
+        position: relative;
     }
     input {
         font-size: large;
