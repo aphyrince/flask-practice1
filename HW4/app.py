@@ -133,7 +133,7 @@ class TodoList(Resource):
         done = request.args.get("done")  # 물음표 뒤의 값을 읽는다
         if done is not None:
             q = q.filter_by(done=(done.lower() == "true"))
-        return Todo.query.all()
+        return q.all()
 
     @ns.doc("새로 만들기")
     @ns.expect(todo_input, validate=True)
