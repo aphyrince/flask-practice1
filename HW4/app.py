@@ -125,9 +125,14 @@ todo_input = api.model(
 @ns.route("/")
 class TodoList(Resource):
     @ns.doc("목록 보기")
+    @ns.param("done", "true 면 완료만, false 면 아직 안 한 것만")
     @ns.marshal_list_with(todo_model)
     def get(self):
         """할 일을 전부 돌려준다"""
+        q = Todo.query
+        done = request.args.get("done")  # 물음표 뒤의 값을 읽는다
+        if done is not None:
+            q = q.filter_by(done=(done.lower() == "true"))
         return Todo.query.all()
 
     @ns.doc("새로 만들기")
