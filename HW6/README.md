@@ -6,9 +6,11 @@
 
 .venv/Scripts/activate 로 가상환경 켜기.
 
-cd .\HW6\
+터미널에서 pip install -r requirements.txt 실행.
 
-jupyter 로 hw6.ipynb 를 Run All
+터미널에서 cd .\HW6\ 실행.
+
+jupyter 로 hw6.ipynb 를 열고, Kernel을 venv로 바꾼 후 Run All
 
 터미널에서 flask run 뒤 http://127.0.0.1:5000/api/docs 접속.
 
